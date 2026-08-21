@@ -1,0 +1,9 @@
+select 
+* ,
+sum(amount) over(partition by category order by date ) as total_amt_till_date 
+ from random_tables.expenses
+order by category,date;
+
+SELECT  
+sum(amount) as total_amt
+from expenses
